@@ -1,0 +1,47 @@
+{
+    "name": "json-obj-diff",
+    "version": "1.0.0",
+    "description": "A tiny library to find difference between two json objects",
+    "main": "dist/index.js",
+    "index": "dist/index.js",
+    "types": "types/index.d.ts",
+    "type": "module",
+    "scripts": {
+        "test": "npm run build && ts-node ./test/index.js",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DhyeyMoliya/json-obj-diff.git"
+    },
+    "keywords": [
+        "json",
+        "object",
+        "difference",
+        "diff"
+    ],
+    "author": "Dhyey Moliya <dhyeymoliya@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DhyeyMoliya/json-obj-diff/issues"
+    },
+    "homepage": "https://github.com/DhyeyMoliya/json-obj-diff#readme",
+    "devDependencies": {
+        "ts-node": "^10.4.0",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.2"
+    },
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "typesVersions": {
+        "*": {
+            "./*": [
+                "./src/*"
+            ],
+            "index.d.ts": [
+                "types/index.d.ts"
+            ]
+        }
+    }
+}
