@@ -1,5 +1,5 @@
 const nonExistent = [null, undefined];
-export type DiffPropNames = Partial<{
+type DiffPropNames = Partial<{
     oldValue: string,
     newValue: string,
     isArr: string
@@ -15,7 +15,7 @@ const defaultPropNames: DiffPropNames = {
     arrLenNew: '_arr_len_n',
 };
 
-export const jsonObjDiff = (value1: any, value2: any, propNames: DiffPropNames = {}) => {
+export function jsonObjDiff(value1: any, value2: any, propNames: DiffPropNames = {}) {
     const opts: DiffPropNames = { ...defaultPropNames, ...propNames };
     const prepareDiff = (val1, val2) => {
         let difference: any = {};

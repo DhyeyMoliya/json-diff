@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
         "moduleResolution": "node",
-        "module": "ESNext",
+        "module": "es2020",
+        "target": "es2019",
         "esModuleInterop": true,
         "noImplicitAny": false,
         "sourceMap": false,
         "outDir": "dist",
         "declaration": true,
-        "declarationDir": "types",
         "allowSyntheticDefaultImports": true,
     },
     "include": [
