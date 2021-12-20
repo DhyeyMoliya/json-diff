@@ -1,12 +1,13 @@
 {
     "name": "json-obj-diff",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "A tiny library to find difference between two json objects",
     "main": "index.js",
     "types": "index.d.ts",
+    "type": "module",
     "scripts": {
         "test": "npm run build && ts-node ./test/index.js",
-        "build": "tsc",
+        "build": "tsc -p tsconfig.cjs.json && mv dist/index.js dist/index.cjs && tsc -p tsconfig.json",
         "package": "rm -rf dist && npm run build && rm -rf package && cp -r dist package && cp package.json README.md LICENSE.md package/"
     },
     "repository": {
@@ -32,7 +33,10 @@
     },
     "exports": {
         "./package.json": "./package.json",
-        ".": "./index.js",
+        ".": {
+            "require": "./index.cjs",
+            "import": "./index.js"
+        },
         "./index.d.ts": "./index.d.ts"
     }
 }
